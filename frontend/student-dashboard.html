@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Task Management System</h1>
+            <div class="user-info">
+                Welcome, <span id="studentName">Student</span>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <nav class="sidebar">
+            <ul>
+                <li class="active"><a href="#" onclick="showSection('myTasks')">My Tasks</a></li>
+                <li><a href="#" onclick="showSection('compiler')">Java Compiler</a></li>
+                <li><a href="#" onclick="showSection('studentProfile')">My Profile</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <!-- My Tasks Section -->
+            <section id="myTasks" class="content-section active">
+                <h2>My Assigned Tasks</h2>
+                <div id="studentTasksList" class="tasks-list">
+                    <!-- Tasks will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Compiler Section -->
+            <section id="compiler" class="content-section">
+                <h2>Java Online Compiler</h2>
+                <div class="compiler-container">
+                    <div class="code-editor">
+                        <textarea id="javaCode" placeholder="Write your Java code here...">public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}</textarea>
+                    </div>
+                    <div class="compiler-controls">
+                        <button onclick="runJavaCode()" class="run-btn">Run Code</button>
+                        <button onclick="clearCode()" class="clear-btn">Clear</button>
+                    </div>
+                    <div class="output-container">
+                        <h3>Output:</h3>
+                        <pre id="output"></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="studentProfile" class="content-section">
+                <h2>My Profile</h2>
+                <div class="profile-info">
+                    <p><strong>Student ID:</strong> <span id="profileStudentId">-</span></p>
+                    <p><strong>Name:</strong> <span id="profileStudentName">-</span></p>
+                    <p><strong>Username:</strong> <span id="profileStudentUsername">-</span></p>
+                    <p><strong>Email:</strong> <span id="profileStudentEmail">-</span></p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/student-dashboard.js"></script>
+</body>
+</html>

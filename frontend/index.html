@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .home-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .hero-section {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-content {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .feature-card li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .feature-card li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 40px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="home-container">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>🎓 College Management System</h1>
+                <p class="tagline">Streamlining Education Management for Staff and Students</p>
+                
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>👨‍🏫 Staff Features</h3>
+                        <ul>
+                            <li>Assign tasks to students</li>
+                            <li>Track task progress in real-time</li>
+                            <li>Send email notifications</li>
+                            <li>Monitor student submissions</li>
+                            <li>Manage multiple classes</li>
+                            <li>Generate progress reports</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🎒 Student Features</h3>
+                        <ul>
+                            <li>View assigned tasks</li>
+                            <li>Built-in Java compiler</li>
+                            <li>Submit tasks with code</li>
+                            <li>Track deadlines and progress</li>
+                            <li>Receive email notifications</li>
+                            <li>Access learning materials</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🚀 System Features</h3>
+                        <ul>
+                            <li>Secure authentication</li>
+                            <li>MongoDB database</li>
+                            <li>Real-time updates</li>
+                            <li>Email integration</li>
+                            <li>Responsive design</li>
+                            <li>Code execution environment</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="login.html" class="btn btn-primary">
+                        <span>🚀 Get Started</span>
+                    </a>
+                    <a href="login.html" class="btn btn-secondary">
+                        <span>🔐 Login</span>
+                    </a>
+                </div>
+                
+                <div style="margin-top: 40px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                    <h3 style="margin-bottom: 15px; color: #333;">📋 Quick Demo Guide</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; text-align: left;">
+                        <div>
+                            <strong>Staff Login:</strong><br>
+                            Username: <code>Gayathri</code><br>
+                            Password: <code>staff123</code>
+                        </div>
+                        <div>
+                            <strong>Student Logins:</strong><br>
+                            <code>Kannan/27082005</code><br>
+                            <code>Kamaleeh/18082005</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const featureCards = document.querySelectorAll('.feature-card');
+            
+            featureCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+
+            // Add click animation to buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                        window.location.href = this.getAttribute('href');
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

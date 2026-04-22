@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Task Management System</h1>
+            <div class="user-info">
+                Welcome, <span id="staffName">Gayathri</span>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <nav class="sidebar">
+            <ul>
+                <li class="active"><a href="#" onclick="showSection('taskManagement')">Task Management</a></li>
+                <li><a href="#" onclick="showSection('myProfile')">My Profile</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <!-- Task Management Section -->
+            <section id="taskManagement" class="content-section active">
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>TOTAL TASKS</h3>
+                        <span id="totalTasks">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>COMPLETED</h3>
+                        <span id="completedTasks">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>PENDING</h3>
+                        <span id="pendingTasks">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>SUBMITTED</h3>
+                        <span id="submittedTasks">0</span>
+                    </div>
+                </div>
+
+                <div class="task-form-section">
+                    <h3>Assign New Task</h3>
+                    <form id="assignTaskForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="taskTitle">Task Title *</label>
+                                <input type="text" id="taskTitle" name="taskTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentId">Student ID *</label>
+                                <select id="studentId" name="studentId" required>
+                                    <option value="">Select Student</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="taskDescription">Description *</label>
+                            <textarea id="taskDescription" name="taskDescription" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="instructions">Instructions</label>
+                            <textarea id="instructions" name="instructions" rows="2"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dueDate">Due Date *</label>
+                            <input type="date" id="dueDate" name="dueDate" required>
+                        </div>
+                        
+                        <button type="submit" class="assign-btn">Assign Task</button>
+                    </form>
+                </div>
+
+                <div class="tasks-list-section">
+                    <h3>All Tasks</h3>
+                    <div id="tasksList" class="tasks-list">
+                        <!-- Tasks will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="myProfile" class="content-section">
+                <h2>My Profile</h2>
+                <div class="profile-info">
+                    <p><strong>Username:</strong> <span id="profileUsername">Gayathri</span></p>
+                    <p><strong>Role:</strong> Staff Member</p>
+                    <p><strong>Email:</strong> gayathri@college.edu</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/staff-dashboard.js"></script>
+</body>
+</html>
